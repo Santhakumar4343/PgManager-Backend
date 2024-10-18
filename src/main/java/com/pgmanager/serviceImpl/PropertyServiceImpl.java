@@ -42,6 +42,7 @@ public class PropertyServiceImpl implements PropertyService{
             existingProperty.setOwneremail(property.getOwneremail());
             existingProperty.setPincode(property.getPincode());
             existingProperty.setPropertyType(property.getPropertyType());
+            existingProperty.setAddress(property.getAddress());
             return propertyRepository.save(existingProperty);
         }
         return null;
