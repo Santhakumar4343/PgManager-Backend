@@ -1,28 +1,25 @@
 package com.pgmanager.entity;
 
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 @Builder
 @Entity
-public class Admin {
+public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,9 +35,9 @@ public class Admin {
 	private String presentAddress;
 	private String permanetAddress;
 	@Lob
-	private byte[] aadharcard;
+	private byte[] aadharcard; 
 	
-	@JsonBackReference
-	@OneToMany(mappedBy = "admin", cascade = CascadeType.ALL)
-    private List<Property> properties; 
+	@OneToOne(mappedBy = "assignedUser")
+    @JsonBackReference
+    private Bed bed;
 }

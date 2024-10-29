@@ -13,6 +13,12 @@ public interface PropertyService {
 	    Property getPropertyById(Long id);
 	    Property updateProperty(Long id, Property property);
 	    void deleteProperty(Long id);
+	    
+	    Property assignAdmin(long id,Property property) ;
+	    
+	    List<Property> getPropertyBasedOnEmail(String owneremail);
+	   
+	    
 	}
 
 

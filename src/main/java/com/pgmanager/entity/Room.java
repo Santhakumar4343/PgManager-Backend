@@ -19,7 +19,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Entity
 @Data
 @NoArgsConstructor
@@ -40,11 +39,5 @@ public class Room {
 	    @JsonManagedReference
 	    private List<Bed> beds;
 
-
-	
-
-
-	
-    
 }
 
